@@ -41,7 +41,58 @@ INSERT INTO empleados (id_empleados, nombre, tienda, salario, fecha_incorporacio
 	VALUES (1,"Laura","Alcobendas",2987,"2010-09-03"),
 		(2,"María","Sevilla",null, "2001-04-11"),
         (3,"Ester","Oviedo",30165.98,"29-11-29");
--- nos daba error en el el date porque es in string
--- nos sigue dando error en el número decimal, ¡corregir!
+-- nos daba error en el el date porque es un string y va entre comillas
+
+
+INSERT INTO clientes (id_clientes, nombre, numero_telefono, email, direccion, ciudad, provincia, codigo_postal)
+	VALUES (1,"Monica","1234567289","monica@email.com","Calle Felicidad", "Móstoles", "Madrid", 28176),
+		(2,"Lorena","289345678","lorena@email.com", "Calle Alegria", "Barcelona", "Barcelona", 12346),
+        (3,"Carmen","298463759","carmen@email.com","Calle del Color", "Vigo", "Pontevedra", 23456);        
+        
+INSERT INTO facturas (id_facturas, numero_factura, fecha, id_zapatillas, id_clientes, id_empleados, total)
+	VALUES (1,123,"2001-12-11", 1, 2, 1, 54.98),
+		(2,1234, "2005-05-23", 1, 1, 3, 89.91),
+        (3,12345, "2015-09-18", 2, 3, 3, 76.23);          
+        
+ -- 3. De nuevo nos hemos dado cuenta que hay algunos errores en la inserción de datos. En este ejercicios los actualizaremos para que nuestra BBDD este perfectita.
+ -- En tabla zapatillas cambiar rosa por amarillas
+UPDATE zapatillas
+	SET color = "amarillas"
+	WHERE color = "rosas";
+ 
+ 
+ -- En tabla empleados Laura ahora vive en A Coruña
+UPDATE empleados
+	SET tienda = "A Coruña"
+	WHERE tienda = "Alcobendas";
+ 
+ 
+ -- En tabla clientes el número de Monica es 123456728
+ UPDATE clientes
+	SET numero_telefono = 123456728
+	WHERE numero_telefono = 1234567289;
+ 
+ 
+ -- En tabla facturas el total de la factura con id 2 es incorrecto, el total es 89,91
+ -- Ya es esa cifra, no hay que hacer nada (Z: tampoco sabría cómo hacerlo xD)
+
+ 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
     
