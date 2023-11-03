@@ -41,7 +41,7 @@ INSERT INTO empleados (id_empleados, nombre, tienda, salario, fecha_incorporacio
 	VALUES (1,"Laura","Alcobendas",2987,"2010-09-03"),
 		(2,"María","Sevilla",null, "2001-04-11"),
         (3,"Ester","Oviedo",30165.98,"29-11-29");
--- nos daba error en el el date porque es un string y va entre comillas
+-- nos daba error en el date porque es un string y va entre comillas
 
 
 INSERT INTO clientes (id_clientes, nombre, numero_telefono, email, direccion, ciudad, provincia, codigo_postal)
@@ -54,7 +54,8 @@ INSERT INTO facturas (id_facturas, numero_factura, fecha, id_zapatillas, id_clie
 		(2,1234, "2005-05-23", 1, 1, 3, 89.91),
         (3,12345, "2015-09-18", 2, 3, 3, 76.23);          
         
- -- 3. De nuevo nos hemos dado cuenta que hay algunos errores en la inserción de datos. En este ejercicios los actualizaremos para que nuestra BBDD este perfectita.
+ -- 3. De nuevo nos hemos dado cuenta que hay algunos errores en la inserción de datos. En este ejercicios los actualizaremos 
+ --    para que nuestra BBDD este perfectita.
  -- En tabla zapatillas cambiar rosa por amarillas
 UPDATE zapatillas
 	SET color = "amarillas"
@@ -64,7 +65,8 @@ UPDATE zapatillas
  -- En tabla empleados Laura ahora vive en A Coruña
 UPDATE empleados
 	SET tienda = "A Coruña"
-	WHERE tienda = "Alcobendas";
+	-- tenemos que especificar para que no nos cambie todos los tienda sino solo el de Laura(id:1)
+    WHERE id_empleados = 1;
  
  
  -- En tabla clientes el número de Monica es 123456728
@@ -74,7 +76,11 @@ UPDATE empleados
  
  
  -- En tabla facturas el total de la factura con id 2 es incorrecto, el total es 89,91
- -- Ya es esa cifra, no hay que hacer nada (Z: tampoco sabría cómo hacerlo xD)
+ 
+ UPDATE facturas
+	SET total = 89.91
+    WHERE id_facturas = 2;
+ 
 
  
         
