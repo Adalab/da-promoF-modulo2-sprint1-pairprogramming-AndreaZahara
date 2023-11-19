@@ -1,1 +1,3 @@
-# da-promoF-modulo2-sprint1-pairprogramming-AndreaZahara
+Ejercicios del Módulo 2.
+Zahara
+Andrea 
